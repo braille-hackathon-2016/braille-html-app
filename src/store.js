@@ -10,6 +10,7 @@ var store = {
     player_1_total_score: 0,
     player_2_total_score: 0,
     paused: false,
+    last_winner: null,
 }
 
 try {

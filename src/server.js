@@ -50,6 +50,7 @@ wss.on("connection", ws => {
                 store[identifier + "_total_score"]++;
                 store["player_1_current_score"] = 0;
                 store["player_2_current_score"] = 0;
+                store.last_winner = ws.num;
                 pause(3000);
             }
         }

@@ -1,6 +1,6 @@
 var words = [
     "apple", "cat", "dog", "fish", "hack", "code", "braille", "sky", "pi",
-    "learn"
+    "learn", "zoo", "why", "box", "rat",
 ];
 
 function rand() {

@@ -1,8 +1,18 @@
 import Vue from 'vue'
-import App from './App'
+import VueRouter from 'vue-router';
+import IndexView from './views/IndexView.vue';
+require("./style/main.scss");
 
-/* eslint-disable no-new */
-new Vue({
-  el: 'body',
-  components: { App }
-})
+Vue.use(VueRouter);
+
+var App = Vue.extend({});
+
+var router = new VueRouter();
+
+router.map({
+    "/": {
+        component: IndexView
+    },
+});
+
+router.start(App, "#game");

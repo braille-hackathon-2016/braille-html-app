@@ -11,12 +11,12 @@
             <div id="scores">
                 <span class="help">Scores</span>
                 <div class="scoreWrap">
-                    <div class="score p1">{{ store.scores[0][0] }}</div>
-                    <div class="smallscore p1">{{ store.scores[0][1] }}%</div>
+                    <div class="score p1">{{ store.player_1_total_score }}</div>
+                    <div class="smallscore p1">{{ store.player_1_current_score }}%</div>
                 </div>
                 <div class="scoreWrap">
-                    <div class="score p2">{{ store.scores[1][0] }}</div>
-                    <div class="smallscore p2">{{ store.scores[1][1] }}%</div>
+                    <div class="score p2">{{ store.player_2_total_score }}</div>
+                    <div class="smallscore p2">{{ store.player_2_current_score }}%</div>
                 </div>
             </div>
             <div id="braille_reference">
@@ -29,6 +29,9 @@
         <h1>Please connect {{ 2 - store.connected }} more phones</h1>
         <h3>Connect to {{ store.ip_address }}</h3>
         <button v-if="store.connected==2" v-on:click="play">Play</button>
+    </div>
+    <div id="paused" v-if="store.paused">
+        <h1>Generating new sentence...</h1>
     </div>
 </template>
 
@@ -45,6 +48,7 @@
                         this.store.time_taken++;
                     }, 1000);
                     this.store.ready = true;
+                    this.store.server.sendAll("sentence", [this.store.current_sentence]);
                 }
             }
     }

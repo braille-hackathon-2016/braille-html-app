@@ -7,6 +7,9 @@ Vue.use(VueRouter);
 
 var store = require("./store.js");
 var server = require("./server.js");
+var wss = server.wss;
+
+store.server = server;
 
 var App = Vue.extend({
     data() {

@@ -6,6 +6,7 @@ require("./style/main.scss");
 Vue.use(VueRouter);
 
 var store = require("./store.js");
+var server = require("./server.js");
 
 var App = Vue.extend({
     data() {
@@ -14,10 +15,6 @@ var App = Vue.extend({
         }
     }
 });
-
-setInterval(() => {
-    store.time_taken++;
-}, 1000);
 
 var router = new VueRouter();
 

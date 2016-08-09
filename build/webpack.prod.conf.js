@@ -25,7 +25,9 @@ var webpackConfig = merge(baseWebpackConfig, {
         })
     },
     externals: {
-        "ws": "ws"
+        "ws": "ws",
+        "dns": "dns",
+        "os": "os",
     },
     plugins: [
         // http://vuejs.github.io/vue-loader/workflow/production.html

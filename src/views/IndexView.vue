@@ -25,14 +25,27 @@
             </div>
         </div>
     </div>
+    <div id="loadingScreen" v-if="!store.ready">
+        <h1>Please connect {{ 2 - store.connected }} more phones</h1>
+        <h3>Connect to {{ store.ip_address }}</h3>
+        <button v-if="store.connected==2" v-on:click="play">Play</button>
+    </div>
 </template>
 
 <script>
     export default {
         data() {
-            return {
-                store: this.$root.store
+                return {
+                    store: this.$root.store
+                }
+            },
+            methods: {
+                play: function(event) {
+                    setInterval(() => {
+                        this.store.time_taken++;
+                    }, 1000);
+                    this.store.ready = true;
+                }
             }
-        }
     }
 </script>

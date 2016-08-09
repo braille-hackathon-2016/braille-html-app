@@ -86,3 +86,23 @@ body {
         flex: 2;
     }
 }
+
+#loadingScreen {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 5rem;
+    text-align: center;
+    h1 {
+        font-weight: 300;
+        margin-bottom: 3rem;
+    }
+    button {
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+}

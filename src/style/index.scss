@@ -8,15 +8,18 @@ body {
 #toolbar {
     background: #1976D2;
     display: block;
-    height: 4rem;
+    height: 3rem;
     box-shadow: 0 0 1rem black;
     color: white;
     padding: 0 2rem;
-    line-height: 4rem;
-    margin-bottom: 4rem;
+    line-height: 3rem;
+    margin-bottom: 3rem;
     .address {
         font-size: 1.2rem;
         font-weight: bold;
+    }
+    .time {
+        float: right;
     }
 }
 
@@ -33,18 +36,53 @@ body {
 #bottomSpace {
     display: flex;
     padding: 1rem;
+    text-align: center;
     .help {
         text-transform: uppercase;
         font-size: 0.95rem;
-        text-decoration: underline;
+        color: #555;
+        border-bottom: 1px solid #333;
     }
     #scores {
         flex: 1;
-        background: white;
         max-width: 20rem;
+        .scoreWrap {
+            display: block;
+            text-align: center;
+            .score {
+                display: inline-block;
+                height: 8rem;
+                width: 8rem;
+                border-radius: 4rem;
+                line-height: 8rem;
+                font-size: 3rem;
+                color: white;
+            }
+            .smallscore {
+                display: inline-block;
+                height: 5rem;
+                width: 5rem;
+                border-radius: 2.5rem;
+                line-height: 5rem;
+                font-size: 1.5rem;
+                color: #eee;
+            }
+        }
+        .score.p2 {
+            background: #FF9800;
+        }
+        .smallscore.p2 {
+            background: lighten(#FF9800, 10%);
+        }
+        .score.p1 {
+            margin: 3rem 0;
+            background: #03A9F4;
+        }
+        .smallscore.p1 {
+            background: lighten(#03A9F4, 10%);
+        }
     }
     #braille_reference {
         flex: 2;
-        background: #aaa;
     }
 }

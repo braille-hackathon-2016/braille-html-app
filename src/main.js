@@ -5,13 +5,26 @@ require("./style/main.scss");
 
 Vue.use(VueRouter);
 
-var App = Vue.extend({});
+var store = require("./store.js");
+
+var App = Vue.extend({
+    data() {
+        return {
+            store
+        }
+    }
+});
+
+setInterval(() => {
+    store.time_taken++;
+}, 1000);
 
 var router = new VueRouter();
 
 router.map({
     "/": {
-        component: IndexView
+        component: IndexView,
+        props: ["store"]
     },
 });
 

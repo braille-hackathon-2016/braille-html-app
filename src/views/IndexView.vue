@@ -1,22 +1,22 @@
 <template>
     <div id="indexView">
         <div id="toolbar">
-            <span class="address">Connect to 192.168.0.22</span>
-            <span class="time">Time: 32 seconds</span>
+            <span class="address">Connect to {{ store.ip_address }}</span>
+            <span class="time">Time: {{ store.time_taken }} seconds</span>
         </div>
         <div id="sentenceSpace">
-            <span class="sentence">Is this a dagger I see before me?</span> 
+            <span class="sentence">{{ store.current_sentence }}</span> 
         </div>
         <div id="bottomSpace">
             <div id="scores">
                 <span class="help">Scores</span>
                 <div class="scoreWrap">
-                    <div class="score p1">32</div>
-                    <div class="smallscore p1">16%</div>
+                    <div class="score p1">{{ store.scores[0][0] }}</div>
+                    <div class="smallscore p1">{{ store.scores[0][1] }}%</div>
                 </div>
                 <div class="scoreWrap">
-                    <div class="score p2">32</div>
-                    <div class="smallscore p2">94%</div>
+                    <div class="score p2">{{ store.scores[1][0] }}</div>
+                    <div class="smallscore p2">{{ store.scores[1][1] }}%</div>
                 </div>
             </div>
             <div id="braille_reference">
@@ -31,7 +31,7 @@
     export default {
         data() {
             return {
-
+                store: this.$root.store
             }
         }
     }

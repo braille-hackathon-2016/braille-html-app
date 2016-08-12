@@ -11,3 +11,6 @@ Open a command prompt or terminal and `cd` into this directory. Then run `npm in
 After everything is installed, run `npm build`. After that's done, the code required for nw.js should be generated and available in the `dist` folder. Copy `package.json` in this directory into the dist directory.
 
 Find where nw.js has been downloaded, extract it if necessary. Drag the contents of the `dist` folder into the extracted location of `nw.js` and run nw.js, it should be up and running now.
+
+# Notes
+Make sure you're connected to the same Wi-Fi network as the clients.

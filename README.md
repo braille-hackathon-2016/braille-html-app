@@ -1,27 +1,13 @@
 # braille-html-app
 
-> Braille HTML Web App
+# Pre-requisites:
+* [node.js](https://nodejs.org/en/)
+* A C++ compiler for node-gyp, look at [Visual C++ Build Tools](http://landinghub.visualstudio.com/visual-cpp-build-tools) or if the computer already has Visual Studio, it should be fine.
+* [nw.js SDK version](http://nwjs.io/)
 
-## Build Setup
+# Getting it up and running:
+Open a command prompt or terminal and `cd` into this directory. Then run `npm install` (make sure you have node.js and the C++ build tools).
 
-``` bash
-# install dependencies
-npm install
+After everything is installed, run `npm build`. After that's done, the code required for nw.js should be generated and available in the `dist` folder. Copy `package.json` in this directory into the dist directory.
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+Find where nw.js has been downloaded, extract it if necessary. Drag the contents of the `dist` folder into the extracted location of `nw.js` and run nw.js, it should be up and running now.
